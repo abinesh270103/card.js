@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>card</title>
+<style>
+					*{
+					padding: 0;
+					margin: 0;
+					box-sizing: border-box;
+					}
+					.container{
+					width:90%;
+					margin: auto;
+					}
+					.row{
+					display: flex;
+					flex-wrap: wrap;
+					}
+					.col{
+					width:25%;
+					padding:20px;
+					cursor: pointer;
+					}
+					img{
+					width:100%;
+					padding:10px;
+					}
+					.col-card{
+					border-radius: 5px;
+					box-shadow:0 0 10px #8d4d4d;
+					}
+					h2{
+					margin:10px;
+					font-size:22px;
+					}
+					.na{
+					font-size:15px;
+					color:#999;
+					margin:10px;
+					}
+					.pare{
+					display:flex;
+                    padding:10px;					
+					justify-content:space-between;
+					}
+					.pe{
+					background-color:green;
+					color:#fff;
+					width:48px;
+					}
+					.del{
+					text-align:center;
+					color:red;
+					border-top:1px solid #999;
+					padding:20px;
+					}
+					.de{
+					text-align:center;
+					color:blue;
+					padding:10px;
+					visibility:hidden;
+					}
+					.col:hover{
+					border:1px solid #999;
+					box-shadow:0 8px 16px 0 #ccc;
+					}
+					.col:hover .de{
+					visibility:visible;
+					color: blue;
+					border-top:1px solid #999;
+					}
+	            
+</style>
+</head>
+<body>
+    <div class="container" data-aos="zoom-in" data-aos-duration="1000">
+    </div>
+    <script>
+
+
+        let foodlist=[
+            {
+                id:1,
+                name:"Abinesh Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹550',
+                rate:4.5,
+				time:'10min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vygixmrxr5oferlex6sc"
+            },
+            {
+                id:2,
+                name:"Arun Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹235',
+                rate:4.4,
+				time:'25min',
+				Delivery:'FREE DELIVERY',
+                view:'Quick View',
+				imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/2411fa7f42286946897958539b16ead5"
+            },
+            {
+                id:3,
+                name:"Ananth Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹335',
+                rate:4.3,
+				time:'20min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+				imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bzxjmpmivzsxa9zqbjme"
+                
+            },
+            {
+                id:4,
+                name:"Karthi Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹355',
+                rate:4.4,
+				time:'52min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xhbcrtzfy6cfx4sowncp"
+            },
+            {
+                id:5,
+                name:"Marish Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹280',
+                rate:4.3,
+				time:'55min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bzxjmpmivzsxa9zqbjme"
+            },
+            {
+                id:6,
+                name:"Arjun Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹340',
+                rate:4.1,
+				time:'35min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/x5ejencwrp6qx9eyu9bh"
+            },
+            {
+                id:1,
+                name:"Jegan Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹380',
+                rate:4.1,
+				time:'30min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vygixmrxr5oferlex6sc"
+            },
+            {
+                id:2,
+                name:"Sivaram Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹350',
+                rate:4.5,
+				time:'48min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/2411fa7f42286946897958539b16ead5"
+            },
+            {
+                id:3,
+                name:"Vishva Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹500',
+                rate:4.4,
+				time:'44min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/x5ejencwrp6qx9eyu9bh"
+            },
+            {
+                id:4,
+                name:"Vellasamy Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹350',
+                rate:4.3,
+                time:'48min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xhbcrtzfy6cfx4sowncp"
+            },
+            {
+                id:5,
+                name:"Vicky Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer: '₹250',
+                rate:4.1,
+				time:'50min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bzxjmpmivzsxa9zqbjme"
+            },
+            {
+                id:6,
+                name:"Rajesh Resturant",
+                Location:"Fast Food Pizzas,Beverages",
+                offer:'₹400',
+                rate:4.2,
+				time:'40min',
+				Delivery:'FREE DELIVERY',
+				view:'Quick View',
+                imgurl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/2725f3b972c039cffd84bd2dd45423a9"
+            }
+        ]
+
+        let cont=document.querySelector(".container");
+        let cards=document.createElement("div");
+        cards.classList.add("row");
+        cont.appendChild(cards);
+
+        foodlist.forEach(function(e){
+        let div=document.createElement("div");
+        div.classList.add("col");
+        cards.appendChild(div);
+
+        let div2=document.createElement("div");
+        div2.classList.add("col-card");
+        div.appendChild(div2);
+        
+        let img=document.createElement("img");
+        img.src=e.imgurl;
+        div2.appendChild(img);
+
+        let head=document.createElement("h2");
+        head.innerHTML=e.name;
+        div2.appendChild(head);
+
+        let para=document.createElement("p");
+		para.classList.add("na");
+        para.innerHTML=e.Location;
+        div2.appendChild(para);
+		
+        let div3=document.createElement("div");
+        div3.classList.add("pare");
+        div2.appendChild(div3);
+
+        let para2=document.createElement("p");
+		para2.classList.add("pe");
+        para2.innerHTML=`<iconify-icon icon="material-symbols:star-half"></iconify-icon> ${e.rate}`;
+        div3.appendChild(para2);
+		
+		let para3=document.createElement("p");
+		para3.innerHTML=e.time;
+        div3.appendChild(para3)
+		
+		let para1=document.createElement("p");
+        para1.innerHTML=`${e.offer} FOR TWO`;
+        div3.appendChild(para1);
+       
+		let para4=document.createElement("p");
+        para4.classList.add("del");
+		para4.innerHTML=`<iconify-icon inline icon="iconoir:percentage-circle" style="color: red;" width="20" rotate="270deg" flip="horizontal,vertical"></iconify-icon>  ${e.Delivery}`;
+        div2.appendChild(para4);
+		
+		let para5=document.createElement("p");
+        para5.classList.add("de");
+		para5.innerHTML=e.view;
+        div2.appendChild(para5);
+		
+        });
+        
+      
+            console.log(cont);
+    </script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
